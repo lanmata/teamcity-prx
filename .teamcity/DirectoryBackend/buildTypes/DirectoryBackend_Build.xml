@@ -204,7 +204,7 @@ foreach ($file in $filesToCopy) {
     </build-extensions>
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="SecurityOauth_Build" cleanDestination="false">
-        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" branch="+:main&#xD;&#xA;+:development " />
+        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" branch="+:main&#xD;&#xA;+:develop" />
         <artifact sourcePath="target/security-oauth-0.0.1.jar =&gt; libs/" />
       </dependency>
     </artifact-dependencies>
