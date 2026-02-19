@@ -5,6 +5,7 @@
   <settings>
     <options>
       <option name="allowExternalStatus" value="true" />
+      <option name="artifactRules" value="target =&gt; target" />
       <option name="buildNumberPattern" value="0.0.%build.counter%" />
     </options>
     <parameters>
