@@ -66,7 +66,7 @@
       </runner>
       <runner id="publish" name="publish" type="tc:recipe:jetbrains/publish-artifacts@1.0.1">
         <parameters>
-          <param name="env.input_path_to_publish" value="%system.teamcity.build.workingDir" />
+          <param name="env.input_path_to_publish" value="%teamcity.agent.work.dir%" />
           <param name="plugin.docker.imageId" value="" />
           <param name="plugin.docker.imagePlatform" value="" />
           <param name="plugin.docker.run.parameters" value="" />
