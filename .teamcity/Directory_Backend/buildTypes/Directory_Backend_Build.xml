@@ -15,8 +15,9 @@
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
           <param name="pomLocation" value="pom.xml" />
           <param name="runnerArgs" value="-Dmaven.test.failure.ignore=true" />
+          <param name="target.jdk.home" value="%env.JDK_21_0_x64%" />
           <param name="teamcity.step.mode" value="default" />
-          <param name="userSettingsSelection" value="userSettingsSelection:default" />
+          <param name="userSettingsSelection" value="Repsy Maven" />
         </parameters>
       </runner>
       <runner id="Qodana" name="" type="Qodana">
