@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="2f0e4ca9-9c49-4a1e-b60a-ea971b3e24b4" type="jetbrains.git" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2025.3/project-config.xsd">
+  <name>https://github.com/um-dev-creative/directory-backend#refs/heads/main</name>
+  <param name="authMethod" value="PASSWORD" />
+  <param name="branch" value="refs/heads/main" />
+  <param name="secure:password" value="credentialsJSON:92fe4d82-059a-4312-84d0-217844d56430" />
+  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="teamcity:branchSpec" value="refs/heads/*" />
+  <param name="url" value="https://github.com/um-dev-creative/directory-backend" />
+  <param name="useAlternates" value="AUTO" />
+  <param name="username" value="lanmata" />
+</vcs-root>
+
