@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="08b33659-b83c-463c-91e8-253f5a7f9722" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2025.3/project-config.xsd">
+  <name>Build</name>
+  <description />
+  <settings>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Directory_Backend_HttpsGithubComUmDevCreativeDirectoryBackendRefsHeadsMain" />
+    </vcs-settings>
+    <build-triggers>
+      <build-trigger id="TRIGGER_10" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter"><![CDATA[+:main
++:development]]></param>
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <build-extensions>
+      <extension id="perfmon" type="perfmon" />
+    </build-extensions>
+  </settings>
+</build-type>
+
