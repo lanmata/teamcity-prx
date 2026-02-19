@@ -42,7 +42,6 @@
           <param name="teamcity.coverage.jacoco.classpath" value="+:target/classes/com/prx/directory/**" />
           <param name="teamcity.coverage.jacoco.patterns"><![CDATA[+:com.prx.directory.*
 -:*Test*]]></param>
-          <param name="teamcity.coverage.runner" value="JACOCO" />
           <param name="teamcity.step.mode" value="default" />
           <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.0.8.7%" />
           <param name="userSettingsSelection" value="Repsy Maven" />
