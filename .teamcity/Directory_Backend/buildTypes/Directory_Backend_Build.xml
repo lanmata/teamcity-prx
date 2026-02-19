@@ -30,6 +30,9 @@
         </parameters>
       </runner>
       <runner id="DockerCommand" name="Docker build" type="DockerCommand">
+        <conditions>
+          <equals name="teamcity.build.branch" value="development " />
+        </conditions>
         <parameters>
           <param name="docker.command.type" value="build" />
           <param name="docker.image.namesAndTags" value="%maven.project.name%:0.0.2" />
