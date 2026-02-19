@@ -54,6 +54,48 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="certificates_loader" name="certificates_loader" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_noprofile" value="true" />
+          <param name="jetbrains_powershell_scriptArguments" value="-destinationPath %build.certificateDestinationPath%" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[param (
+    [string]$destinationPath
+)
+
+# Definir la ruta de origen
+$sourcePath = "C:\projects\ambient\certs\jobs-backend"
+
+# Listar los archivos que se desean copiar
+$filesToCopy = @("keystore.jks", "backbone.crt", "jobs-backend.crt", "prx-qa.config-server.crt", "prx-qa.manager.crt", "srmn.crt")
+
+# Comprobar si se ha proporcionado una ruta de destino
+if (-Not $destinationPath) {
+    Write-Output 'Por favor, proporciona una ruta de destino.'
+    exit
+}
+
+# Crear el directorio de destino si no existe
+if (-Not (Test-Path $destinationPath)) {
+    New-Item -ItemType Directory -Path $destinationPath
+}
+
+# Copiar los archivos
+foreach ($file in $filesToCopy) {
+    $sourceFile = Join-Path $sourcePath $file
+    $destinationFile = Join-Path $destinationPath $file
+
+    if (Test-Path $sourceFile) {
+        Copy-Item -Path $sourceFile -Destination $destinationFile
+        Write-Output "Archivo copiado: $file"
+    } else {
+        Write-Output "Archivo no encontrado: $file"
+    }
+}]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="Directory_Backend_HttpsGithubComUmDevCreativeDirectoryBackendRefsHeadsMain" />
