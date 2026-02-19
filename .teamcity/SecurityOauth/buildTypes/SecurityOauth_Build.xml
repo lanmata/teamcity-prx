@@ -9,6 +9,7 @@
       <option name="buildNumberPattern" value="0.0.%build.counter%" />
     </options>
     <disabled-settings>
+      <setting-ref ref="Deploy_1" />
       <setting-ref ref="Sonarcloud" />
     </disabled-settings>
     <parameters>
