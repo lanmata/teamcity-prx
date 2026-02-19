@@ -10,6 +10,9 @@
       <setting-ref ref="Docker_push" />
       <setting-ref ref="Qodana" />
     </disabled-settings>
+    <parameters>
+      <param name="build.certificateDestinationPath" value="%system.teamcity.build.workingDir%\" spec="text display='normal' readOnly='true' validationMode='any'" />
+    </parameters>
     <build-runners>
       <runner id="Maven2" name="" type="Maven2">
         <parameters>
