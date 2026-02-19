@@ -64,6 +64,16 @@
           <param name="userSettingsSelection" value="Maven Repsy" />
         </parameters>
       </runner>
+      <runner id="publish" name="publish" type="tc:recipe:jetbrains/publish-artifacts@1.0.1">
+        <parameters>
+          <param name="env.input_path_to_publish" value="./artifacts/" />
+          <param name="plugin.docker.imageId" value="" />
+          <param name="plugin.docker.imagePlatform" value="" />
+          <param name="plugin.docker.run.parameters" value="" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.step.phase" value="" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="SecurityOauth_HttpsGithubComLanmataSecurityOauthRefsHeadsDevelop" />
