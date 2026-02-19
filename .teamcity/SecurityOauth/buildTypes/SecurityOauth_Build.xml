@@ -25,7 +25,6 @@
           <param name="runnerArgs" value="-Dmaven.test.failure.ignore=true" />
           <param name="target.jdk.home" value="%env.JDK_21_0_x64%" />
           <param name="teamcity.coverage.jacoco.classpath" value="." />
-          <param name="teamcity.coverage.runner" value="JACOCO" />
           <param name="teamcity.step.mode" value="default" />
           <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.0.8.13%" />
           <param name="userSettingsSelection" value="Repsy Maven" />
