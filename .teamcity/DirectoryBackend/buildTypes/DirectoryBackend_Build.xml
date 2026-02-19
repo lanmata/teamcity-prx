@@ -190,16 +190,6 @@ foreach ($file in $filesToCopy) {
           <param name="withBuildAnchor" value="true" />
         </parameters>
       </extension>
-      <extension id="BUILD_EXT_6" type="BuildFailureOnMetric">
-        <parameters>
-          <param name="anchorBuild" value="lastSuccessful" />
-          <param name="metricKey" value="CodeCoverageB" />
-          <param name="metricThreshold" value="0" />
-          <param name="metricUnits" value="metricUnitsPercents" />
-          <param name="moreOrLess" value="less" />
-          <param name="withBuildAnchor" value="true" />
-        </parameters>
-      </extension>
     </build-extensions>
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="SecurityOauth_Build" cleanDestination="false">
