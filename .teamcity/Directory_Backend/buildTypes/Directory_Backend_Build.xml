@@ -95,7 +95,7 @@ foreach ($file in $filesToCopy) {
       </runner>
       <runner id="DockerCommand" name="Docker build" type="DockerCommand">
         <parameters>
-          <param name="command.args" value="--build-arg RESOURCE_PATH=/projects/buildAgent/work/%maven.project.name%" />
+          <param name="command.args" value="--build-arg RESOURCE_PATH=/projects/buildAgent/work/%maven.project.name%/" />
           <param name="docker.command.type" value="build" />
           <param name="docker.image.namesAndTags" value="lamata/%maven.project.name%:0.0.2" />
           <param name="docker.push.remove.image" value="true" />
