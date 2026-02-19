@@ -31,10 +31,10 @@
       <runner id="Maven_Build" name="Maven Build" type="Maven2">
         <parameters>
           <param name="goals" value="clean package" />
+          <param name="jvmArgs" value="--enable-native-access=ALL-UNNAMED" />
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
           <param name="pomLocation" value="pom.xml" />
-          <param name="runnerArgs" value="--enable-native-access=ALL-UNNAMED" />
           <param name="teamcity.build.workingDir" value="/projects/buildAgent/work/%maven.project.name%" />
           <param name="teamcity.coverage.emma.include.source" value="true" />
           <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
