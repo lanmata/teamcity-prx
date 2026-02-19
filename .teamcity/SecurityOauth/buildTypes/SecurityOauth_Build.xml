@@ -102,6 +102,16 @@
           <param name="withBuildAnchor" value="false" />
         </parameters>
       </extension>
+      <extension id="BUILD_EXT_10" type="BuildFailureOnMetric">
+        <parameters>
+          <param name="anchorBuild" value="lastSuccessful" />
+          <param name="metricKey" value="buildTestCount" />
+          <param name="metricThreshold" value="20" />
+          <param name="metricUnits" value="metricUnitsPercents" />
+          <param name="moreOrLess" value="less" />
+          <param name="withBuildAnchor" value="true" />
+        </parameters>
+      </extension>
     </build-extensions>
   </settings>
 </build-type>
