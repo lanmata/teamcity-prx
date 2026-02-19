@@ -202,6 +202,12 @@ foreach ($file in $filesToCopy) {
         </parameters>
       </extension>
     </build-extensions>
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="SecurityOauth_Build" cleanDestination="true">
+        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
+        <artifact sourcePath="." />
+      </dependency>
+    </artifact-dependencies>
   </settings>
 </build-type>
 
