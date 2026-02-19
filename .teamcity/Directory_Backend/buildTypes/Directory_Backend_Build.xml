@@ -35,6 +35,7 @@
       </runner>
       <runner id="certificates_loader" name="certificates_loader" type="jetbrains_powershell">
         <parameters>
+          <param name="jetbrains_powershell_bitness" value="x64" />
           <param name="jetbrains_powershell_execution" value="PS1" />
           <param name="jetbrains_powershell_noprofile" value="true" />
           <param name="jetbrains_powershell_scriptArguments" value="-destinationPath %build.certificateDestinationPath%" />
