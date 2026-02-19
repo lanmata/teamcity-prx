@@ -42,6 +42,18 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="Docker_push" name="Docker push" type="DockerCommand">
+        <conditions>
+          <equals name="teamcity.build.branch" value="development" />
+        </conditions>
+        <parameters>
+          <param name="docker.command.type" value="push" />
+          <param name="docker.image.namesAndTags" value="lamataprojec%maven.project.name%:0.0.2" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="Directory_Backend_HttpsGithubComUmDevCreativeDirectoryBackendRefsHeadsMain" />
