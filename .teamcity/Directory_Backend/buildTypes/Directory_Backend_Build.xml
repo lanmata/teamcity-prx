@@ -11,7 +11,7 @@
       <setting-ref ref="Qodana" />
     </disabled-settings>
     <parameters>
-      <param name="build.certificateDestinationPath" value="/projects/buildAgent/work/%maven.project.name%" spec="text display='normal' readOnly='true' validationMode='any'" />
+      <param name="build.certificateDestinationPath" value="%system.teamcity.build.workingDir%" spec="text display='normal' readOnly='true' validationMode='any'" />
     </parameters>
     <build-runners>
       <runner id="Maven2" name="Maven test" type="Maven2">
