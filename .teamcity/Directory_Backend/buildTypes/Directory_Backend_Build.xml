@@ -9,6 +9,7 @@
     <disabled-settings>
       <setting-ref ref="Docker_push" />
       <setting-ref ref="Qodana" />
+      <setting-ref ref="certificates_loader" />
     </disabled-settings>
     <parameters>
       <param name="build.certificateDestinationPath" value="%system.teamcity.build.workingDir%\" spec="text display='normal' readOnly='true' validationMode='any'" />
