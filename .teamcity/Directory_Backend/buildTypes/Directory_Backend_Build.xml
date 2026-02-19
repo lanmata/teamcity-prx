@@ -29,31 +29,6 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="DockerCommand" name="Docker build" type="DockerCommand">
-        <conditions>
-          <equals name="teamcity.build.branch" value="development " />
-        </conditions>
-        <parameters>
-          <param name="docker.command.type" value="build" />
-          <param name="docker.image.namesAndTags" value="lamata/%maven.project.name%:0.0.2" />
-          <param name="docker.push.remove.image" value="true" />
-          <param name="dockerfile.path" value="Dockerfile" />
-          <param name="dockerfile.source" value="PATH" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="Docker_push" name="Docker push" type="DockerCommand">
-        <conditions>
-          <equals name="teamcity.build.branch" value="development" />
-        </conditions>
-        <parameters>
-          <param name="docker.command.type" value="push" />
-          <param name="docker.image.namesAndTags" value="lamataprojec%maven.project.name%:0.0.2" />
-          <param name="docker.push.remove.image" value="true" />
-          <param name="dockerfile.source" value="PATH" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
       <runner id="certificates_loader" name="certificates_loader" type="jetbrains_powershell">
         <parameters>
           <param name="jetbrains_powershell_execution" value="PS1" />
@@ -93,6 +68,31 @@ foreach ($file in $filesToCopy) {
     }
 }]]></param>
           <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="DockerCommand" name="Docker build" type="DockerCommand">
+        <conditions>
+          <equals name="teamcity.build.branch" value="development " />
+        </conditions>
+        <parameters>
+          <param name="docker.command.type" value="build" />
+          <param name="docker.image.namesAndTags" value="lamata/%maven.project.name%:0.0.2" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.path" value="Dockerfile" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="Docker_push" name="Docker push" type="DockerCommand">
+        <conditions>
+          <equals name="teamcity.build.branch" value="development" />
+        </conditions>
+        <parameters>
+          <param name="docker.command.type" value="push" />
+          <param name="docker.image.namesAndTags" value="lamataprojec%maven.project.name%:0.0.2" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.source" value="PATH" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
