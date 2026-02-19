@@ -29,9 +29,10 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="DockerCommand" name="" type="DockerCommand">
+      <runner id="DockerCommand" name="Docker build" type="DockerCommand">
         <parameters>
           <param name="docker.command.type" value="build" />
+          <param name="docker.image.namesAndTags" value="%maven.project.name%:0.0.2" />
           <param name="docker.push.remove.image" value="true" />
           <param name="dockerfile.path" value="Dockerfile" />
           <param name="dockerfile.source" value="PATH" />
