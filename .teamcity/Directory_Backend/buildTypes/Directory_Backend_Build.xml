@@ -4,6 +4,7 @@
   <description />
   <settings>
     <disabled-settings>
+      <setting-ref ref="DockerCommand" />
       <setting-ref ref="Qodana" />
     </disabled-settings>
     <build-runners>
