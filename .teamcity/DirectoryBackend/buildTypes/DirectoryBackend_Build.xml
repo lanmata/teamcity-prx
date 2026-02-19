@@ -8,6 +8,7 @@
       <option name="cleanBuild" value="true" />
       <option name="maximumNumberOfBuilds" value="1" />
       <option name="publishArtifactCondition" value="SUCCESSFUL" />
+      <option name="shouldFailBuildOnAnyErrorMessage" value="true" />
       <option name="showDependenciesChanges" value="true" />
     </options>
     <disabled-settings>
