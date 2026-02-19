@@ -39,10 +39,10 @@
 )
 
 # Definir la ruta de origen
-$sourcePath = "C:\projects\ambient\certs\jobs-backend"
+$sourcePath = "C:\projects\ambient\certs\directory-backend"
 
 # Listar los archivos que se desean copiar
-$filesToCopy = @("keystore.jks", "backbone.crt", "jobs-backend.crt", "prx-qa.config-server.crt", "prx-qa.manager.crt", "srmn.crt")
+$filesToCopy = @("keystore.jks", "backbone.crt", "directory-rest.crt", "prod-ca-2021.crt", "prx-qa.config-server.crt","prx-qa.manager.crt", "srmn.crt")
 
 # Comprobar si se ha proporcionado una ruta de destino
 if (-Not $destinationPath) {
