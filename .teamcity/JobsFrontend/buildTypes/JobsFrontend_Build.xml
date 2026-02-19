@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="ea777890-d3a8-4610-9f43-fe33a928e1ff" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Build</name>
+  <description />
+  <settings>
+    <disabled-settings>
+      <setting-ref ref="DockerCommand" />
+      <setting-ref ref="nodejs_runner_1" />
+      <setting-ref ref="nodejs_runner_2" />
+    </disabled-settings>
+    <parameters>
+      <param name="env.CHROME_BIN" value="require('puppeteer').executablePath();" spec="text display='normal' readOnly='true' validationMode='any'" />
+    </parameters>
+    <build-runners>
+      <runner id="nodejs_runner" name="" type="nodejs-runner">
+        <parameters>
+          <param name="plugin.docker.imageId" value="node:lts" />
+          <param name="plugin.docker.imagePlatform" value="linux" />
+          <param name="shellScript" value="npm install" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="nodejs_runner_2" name="Builder step" type="nodejs-runner">
+        <parameters>
+          <param name="plugin.docker.imageId" value="node:lts" />
+          <param name="plugin.docker.imagePlatform" value="linux" />
+          <param name="shellScript" value="npm install puppeteer" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="nodejs_runner_1" name="Runner test" type="nodejs-runner">
+        <parameters>
+          <param name="plugin.docker.imageId" value="node:lts" />
+          <param name="plugin.docker.imagePlatform" value="linux" />
+          <param name="shellScript" value="npm run test --coverage --coverageReporters=html" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="DockerCommand" name="" type="DockerCommand">
+        <parameters>
+          <param name="docker.command.type" value="build" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.path" value="Dockerfile" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="JobsFrontend_HttpsGithubComLanmataJobsFrontendRefsHeadsDevelop" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_6" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <build-extensions>
+      <extension id="perfmon" type="perfmon">
+        <parameters>
+          <param name="teamcity.perfmon.feature.enabled" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

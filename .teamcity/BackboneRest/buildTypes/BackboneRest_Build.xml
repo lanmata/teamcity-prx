@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="e6264ef0-f923-48ca-b7e4-cef66bdb3606" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Build</name>
+  <description />
+  <settings>
+    <options>
+      <option name="cleanBuild" value="true" />
+    </options>
+    <parameters>
+      <param name="build.certificateDestinationPath" value="%system.teamcity.build.workingDir%\" spec="text display='normal' readOnly='true' validationMode='any'" />
+      <param name="build.docker.projectName" value="lamata/backbone-rest" spec="text display='normal' readOnly='true' validationMode='any'" />
+      <param name="sonar.exclusions" value="**/*.xml,**/PrxBackofficeRestApplication.*,**/config/*,**/config/jwt/*,**/config/jackson/*,**/config/security/*,**/loggers/*,**/loggers/interceptor/*,**/exceptions/*,**/mapper/*,**/mapper/decorator/*,**/converter/*,**/*Test*,**/session/*,**/*.java" spec="text display='normal' readOnly='true' validationMode='any'" />
+      <param name="sonar.projectKey" value="lanmata_backbone-rest" spec="text display='normal' readOnly='true' validationMode='any'" />
+      <param name="sonar.projectName" value="prx" spec="text display='normal' readOnly='true' validationMode='any'" />
+    </parameters>
+    <build-runners>
+      <runner id="Maven2" name="" type="Maven2">
+        <parameters>
+          <param name="goals" value="clean test" />
+          <param name="localRepoScope" value="mavenDefault" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="pomLocation" value="pom.xml" />
+          <param name="runnerArgs" value="-Dmaven.test.failure.ignore=true" />
+          <param name="target.jdk.home" value="%env.JDK_21_0_x64%" />
+          <param name="teamcity.coverage.jacoco.classpath" value="." />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:**" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
+          <param name="userSettingsSelection" value="Repsy Maven" />
+        </parameters>
+      </runner>
+      <runner id="Sonarcloud_1_1" name="Sonarcloud" type="sonar-plugin">
+        <conditions>
+          <equals name="teamcity.build.branch" value="refs/heads/develop" />
+        </conditions>
+        <parameters>
+          <param name="jvmArgs" value="-Dsonar.organization=%sonar.organization% -Dsonar.exclusions=%sonar.exclusions%" />
+          <param name="sonarProjectKey" value="%sonar.projectName%" />
+          <param name="sonarProjectName" value="%system.teamcity.projectName%" />
+          <param name="sonarProjectSources" value="src" />
+          <param name="sonarProjectVersion" value="%build.number%" />
+          <param name="sonarServer" value="5fa30e4f-0c21-4c26-8e65-51d6675a3084" />
+          <param name="target.jdk.home" value="%env.JDK_21_0_x64%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.tool.sonarquberunner" value="%teamcity.tool.sonar-qube-scanner.DEFAULT%" />
+        </parameters>
+      </runner>
+      <runner id="Directory_backend_Build_1" name="Backbone Build" type="Maven2">
+        <conditions>
+          <equals name="teamcity.build.branch" value="refs/heads/develop" />
+        </conditions>
+        <parameters>
+          <param name="goals" value="clean package" />
+          <param name="localRepoScope" value="mavenDefault" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="pomLocation" value="pom.xml" />
+          <param name="target.jdk.home" value="%env.JDK_21_0_x64%" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.classpath"><![CDATA[-:test/*
+-:target/*]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
+          <param name="userSettingsSelection" value="Repsy Maven" />
+        </parameters>
+      </runner>
+      <runner id="certificates_loader_1_1" name="certificates_loader" type="jetbrains_powershell">
+        <conditions>
+          <equals name="teamcity.build.branch" value="refs/heads/develop" />
+        </conditions>
+        <parameters>
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_noprofile" value="true" />
+          <param name="jetbrains_powershell_scriptArguments" value="-destinationPath %build.certificateDestinationPath%" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[param (
+    [string]$destinationPath
+)
+
+# Definir la ruta de origen
+$sourcePath = "C:\projects\ambient\certs\backbone-rest"
+
+# Listar los archivos que se desean copiar
+$filesToCopy = @("keystore.jks", "backbone.crt", "prx-qa.crt", "prx-qa.config-server.crt", "prx-qa.manager.crt", "srmn.crt")
+
+# Comprobar si se ha proporcionado una ruta de destino
+if (-Not $destinationPath) {
+    Write-Output 'Por favor, proporciona una ruta de destino.'
+    exit
+}
+
+# Crear el directorio de destino si no existe
+if (-Not (Test-Path $destinationPath)) {
+    New-Item -ItemType Directory -Path $destinationPath
+}
+
+# Copiar los archivos
+foreach ($file in $filesToCopy) {
+    $sourceFile = Join-Path $sourcePath $file
+    $destinationFile = Join-Path $destinationPath $file
+
+    if (Test-Path $sourceFile) {
+        Copy-Item -Path $sourceFile -Destination $destinationFile
+        Write-Output "Archivo copiado: $file"
+    } else {
+        Write-Output "Archivo no encontrado: $file"
+    }
+}]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="DockerCommand_1_1" name="Docker Build image" type="DockerCommand">
+        <conditions>
+          <equals name="teamcity.build.branch" value="refs/heads/develop" />
+        </conditions>
+        <parameters>
+          <param name="docker.command.type" value="build" />
+          <param name="docker.image.namesAndTags" value="%build.docker.projectName%:0.0.1" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerImage.platform" value="linux" />
+          <param name="dockerfile.path" value="Dockerfile" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="Docker_Push_1_1" name="Docker Push" type="DockerCommand">
+        <conditions>
+          <equals name="teamcity.build.branch" value="refs/heads/develop" />
+        </conditions>
+        <parameters>
+          <param name="docker.command.type" value="push" />
+          <param name="docker.image.namesAndTags" value="%build.docker.projectName%:0.0.1" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="execute_if_success" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="BackboneRest_Teamcity" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="vcsTrigger" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <build-extensions>
+      <extension id="BUILD_EXT_5" type="BuildFailureOnMetric">
+        <parameters>
+          <param name="anchorBuild" value="lastSuccessful" />
+          <param name="metricKey" value="buildTestCount" />
+          <param name="metricThreshold" value="20" />
+          <param name="metricUnits" value="metricUnitsPercents" />
+          <param name="moreOrLess" value="less" />
+          <param name="withBuildAnchor" value="true" />
+        </parameters>
+      </extension>
+      <extension id="DockerSupport" type="DockerSupport">
+        <parameters>
+          <param name="cleanupPushed" value="true" />
+          <param name="login2registry" value="PROJECT_EXT_16" />
+          <param name="loginCheckbox" value="on" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

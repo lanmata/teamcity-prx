@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="56d9b30f-8573-4e83-902e-3fc328a30762" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Security Oauth</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_8" type="sonar-qube">
+      <parameters>
+        <param name="id" value="361583d7-7a30-4718-b1c0-2e070f900874" />
+        <param name="name" value="Sonarcloud" />
+        <param name="token" value="scrambled:MTMyMjc1M2VmNzdiMTBlODJlOTA4ODYzM2I2NDliYjQxOTU2ZDE3Zg==" />
+        <param name="url" value="https://sonarcloud.io" />
+        <param name="useToken" value="true" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_9" type="IssueTracker">
+      <parameters>
+        <param name="authType" value="accesstoken" />
+        <param name="host" value="https://prx.myjetbrains.com/" />
+        <param name="idPrefix" value="PRX JB" />
+        <param name="name" value="Youtrack" />
+        <param name="secure:accessToken" value="credentialsJSON:9005c9e4-3bca-497a-97a8-3e917274adf0" />
+        <param name="secure:password" value="" />
+        <param name="type" value="youtrack" />
+        <param name="username" value="" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

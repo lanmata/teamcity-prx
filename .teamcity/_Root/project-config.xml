@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="30786120-4a45-4615-a26f-0ff1360931ff" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2025.3/project-config.xsd">
+  <name>&lt;Root project&gt;</name>
+  <description>Contains all other projects</description>
+  <project-extensions>
+    <extension id="PROJECT_EXT_1" type="ReportTab">
+      <parameters>
+        <param name="startPage" value="coverage.zip!index.html" />
+        <param name="title" value="Code Coverage" />
+        <param name="type" value="BuildReportTab" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_11" type="sonar-qube">
+      <parameters>
+        <param name="id" value="5fa30e4f-0c21-4c26-8e65-51d6675a3084" />
+        <param name="name" value="Sonarcloud" />
+        <param name="token" value="scrambled:MTMyMjc1M2VmNzdiMTBlODJlOTA4ODYzM2I2NDliYjQxOTU2ZDE3Zg==" />
+        <param name="url" value="https://sonarcloud.io/" />
+        <param name="useToken" value="true" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_12" type="IssueTracker">
+      <parameters>
+        <param name="authType" value="accesstoken" />
+        <param name="host" value="https://prx.myjetbrains.com/" />
+        <param name="idPrefix" value="PRX JB" />
+        <param name="name" value="Youtrack" />
+        <param name="secure:accessToken" value="credentialsJSON:9005c9e4-3bca-497a-97a8-3e917274adf0" />
+        <param name="secure:password" value="" />
+        <param name="type" value="youtrack" />
+        <param name="username" value="" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_15" type="versionedSettings">
+      <parameters>
+        <param name="buildSettings" value="ALWAYS_USE_CURRENT" />
+        <param name="credentialsStorageType" value="credentialsJSON" />
+        <param name="enabled" value="true" />
+        <param name="ignoreChangesInDependenciesAndVcsSettings" value="false" />
+        <param name="rootId" value="TeamcityEnvironment" />
+        <param name="showChanges" value="true" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_3" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="bba1b8947e6003b2c5383965fa535c6ed6117b2a481bf5282a78f2674c16191b" />
+        <param name="displayName" value="GitLab.com" />
+        <param name="providerType" value="GitLabCom" />
+        <param name="secure:clientSecret" value="credentialsJSON:5f7f666a-1eaa-4565-b5a8-30685d7fd41f" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_5" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="Ov23lijOeiAx7uTwyDNI" />
+        <param name="defaultTokenScope" value="public_repo,repo,repo:status,write:repo_hook" />
+        <param name="displayName" value="GitHub.com" />
+        <param name="gitHubUrl" value="https://github.com/" />
+        <param name="providerType" value="GitHub" />
+        <param name="secure:clientSecret" value="credentialsJSON:cfd85222-005c-4ac6-bba4-45a75c9c056f" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup>
+    <options>
+      <option name="preventDependenciesArtifactsFromCleanup" value="false" />
+    </options>
+  </cleanup>
+</project>
+
