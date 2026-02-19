@@ -6,8 +6,11 @@
       <parameters>
         <param name="filters.1.activity" value="active" />
         <param name="filters.1.type" value="branchActivity" />
-        <param name="filters.2.status" value="successful" />
-        <param name="filters.2.type" value="buildStatus" />
+        <param name="filters.2.pattern"><![CDATA[+:<default>
++:main]]></param>
+        <param name="filters.2.type" value="branchPattern" />
+        <param name="filters.3.status" value="successful" />
+        <param name="filters.3.type" value="buildStatus" />
         <param name="keepData.1.type" value="everything" />
         <param name="limit.buildsCount" value="3" />
         <param name="limit.type" value="lastNBuilds" />
