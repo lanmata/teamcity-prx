@@ -14,7 +14,7 @@
       <param name="build.certificateDestinationPath" value="%system.teamcity.build.workingDir%\" spec="text display='normal' readOnly='true' validationMode='any'" />
     </parameters>
     <build-runners>
-      <runner id="Maven2" name="" type="Maven2">
+      <runner id="Maven2" name="Maven test" type="Maven2">
         <parameters>
           <param name="goals" value="clean test" />
           <param name="localRepoScope" value="agent" />
