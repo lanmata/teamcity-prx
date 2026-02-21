@@ -8,7 +8,7 @@
       <tool-version tool-type="maven" id="maven.3.9.9" />
       <tool-version tool-type="jacoco" id="jacoco.0.8.7" />
       <tool-version tool-type="JetBrains.dotCover.CommandLineTools" id="JetBrains.dotCover.CommandLineTools.bundled" />
-      <tool-version tool-type="intellij" id="intellij.ideaIU-2024.3.5" />
+      <tool-version tool-type="intellij" id="intellij.ideaIU-2025.2.5" />
     </default-versions>
   </tools>
 </settings>
