@@ -105,9 +105,6 @@ foreach ($file in $filesToCopy) {
         </parameters>
       </runner>
       <runner id="Docker_push" name="Docker push" type="DockerCommand">
-        <conditions>
-          <equals name="teamcity.build.branch" value="development" />
-        </conditions>
         <parameters>
           <param name="docker.command.type" value="push" />
           <param name="docker.image.namesAndTags" value="lamataprojec%maven.project.name%:0.0.2" />
