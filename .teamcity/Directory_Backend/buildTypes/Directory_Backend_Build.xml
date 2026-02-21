@@ -9,7 +9,6 @@
     <disabled-settings>
       <setting-ref ref="Docker_push" />
       <setting-ref ref="Maven2" />
-      <setting-ref ref="Maven_Build" />
       <setting-ref ref="Qodana" />
     </disabled-settings>
     <parameters>
