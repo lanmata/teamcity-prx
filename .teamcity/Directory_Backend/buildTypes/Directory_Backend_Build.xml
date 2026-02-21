@@ -7,6 +7,7 @@
       <option name="buildNumberPattern" value="0.0.%build.counter%" />
     </options>
     <disabled-settings>
+      <setting-ref ref="DockerCommand" />
       <setting-ref ref="Docker_push" />
       <setting-ref ref="Qodana" />
     </disabled-settings>
