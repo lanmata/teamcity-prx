@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="92c16a8d-1211-41db-b20a-cdd5f9c1a9c2" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="92c16a8d-1211-41db-b20a-cdd5f9c1a9c2" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2025.3/project-config.xsd">
   <name>Commons (Github)</name>
-  <parameters />
   <project-extensions>
     <extension id="PROJECT_EXT_6" type="IssueTracker">
       <parameters>
@@ -19,12 +18,11 @@
       <parameters>
         <param name="id" value="0a97301e-3e0e-4f6f-a4e7-fbea7b1f7507" />
         <param name="name" value="Sonar Cloud for Github projects" />
-        <param name="token" value="scrambled:ZWU1NDZmYzcyMjgzZWI5MTA2Nzg5MmM4ZDYzYjNjNjYxYmE4OGQ4NA==" />
+        <param name="secure:token" value="credentialsJSON:36eff63a-029d-448a-8f8a-92f3346e63ad" />
         <param name="url" value="https://sonarcloud.io/" />
         <param name="useToken" value="true" />
       </parameters>
     </extension>
   </project-extensions>
-  <cleanup />
 </project>
 
