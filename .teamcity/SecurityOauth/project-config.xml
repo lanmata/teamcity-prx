@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="56d9b30f-8573-4e83-902e-3fc328a30762" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="56d9b30f-8573-4e83-902e-3fc328a30762" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2025.3/project-config.xsd">
   <name>Security Oauth</name>
-  <parameters />
   <project-extensions>
     <extension id="PROJECT_EXT_8" type="sonar-qube">
       <parameters>
         <param name="id" value="361583d7-7a30-4718-b1c0-2e070f900874" />
         <param name="name" value="Sonarcloud" />
-        <param name="token" value="scrambled:MTMyMjc1M2VmNzdiMTBlODJlOTA4ODYzM2I2NDliYjQxOTU2ZDE3Zg==" />
+        <param name="secure:token" value="credentialsJSON:1835288e-ce7e-46c0-8a52-e98d61473f41" />
         <param name="url" value="https://sonarcloud.io" />
         <param name="useToken" value="true" />
       </parameters>
@@ -25,6 +24,5 @@
       </parameters>
     </extension>
   </project-extensions>
-  <cleanup />
 </project>
 
