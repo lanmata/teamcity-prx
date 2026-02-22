@@ -14,7 +14,7 @@
       <parameters>
         <param name="id" value="5fa30e4f-0c21-4c26-8e65-51d6675a3084" />
         <param name="name" value="Sonarcloud" />
-        <param name="token" value="scrambled:MTMyMjc1M2VmNzdiMTBlODJlOTA4ODYzM2I2NDliYjQxOTU2ZDE3Zg==" />
+        <param name="secure:token" value="credentialsJSON:1835288e-ce7e-46c0-8a52-e98d61473f41" />
         <param name="url" value="https://sonarcloud.io/" />
         <param name="useToken" value="true" />
       </parameters>
