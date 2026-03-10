@@ -10,6 +10,7 @@
     <disabled-settings>
       <setting-ref ref="DockerCommand" />
       <setting-ref ref="Maven2" />
+      <setting-ref ref="Push_Image" />
       <setting-ref ref="Qodana" />
       <setting-ref ref="Sonarcloud" />
     </disabled-settings>
