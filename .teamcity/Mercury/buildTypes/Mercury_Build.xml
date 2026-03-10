@@ -9,6 +9,7 @@
     </options>
     <disabled-settings>
       <setting-ref ref="Maven2" />
+      <setting-ref ref="Maven_Build_1_1" />
       <setting-ref ref="Qodana" />
       <setting-ref ref="Sonarcloud" />
     </disabled-settings>
