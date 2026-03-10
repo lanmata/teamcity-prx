@@ -83,15 +83,16 @@
           <param name="goals" value="clean package" />
           <param name="jvmArgs" value="--enable-native-access=ALL-UNNAMED" />
           <param name="localRepoScope" value="agent" />
-          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="maven.path" value="%teamcity.tool.maven.3.9.12%" />
           <param name="pomLocation" value="pom.xml" />
+          <param name="target.jdk.home" value="%env.JDK_21_0_x64%" />
           <param name="teamcity.coverage.emma.include.source" value="true" />
           <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
           <param name="teamcity.coverage.idea.includePatterns" value="*" />
           <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
           <param name="teamcity.step.mode" value="default" />
           <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
-          <param name="userSettingsSelection" value="userSettingsSelection:default" />
+          <param name="userSettingsSelection" value="Repsy Maven" />
         </parameters>
       </runner>
       <runner id="Maven_Build_1_1" name="Maven Build (1)" type="Maven2">
