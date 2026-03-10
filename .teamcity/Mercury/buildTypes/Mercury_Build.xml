@@ -68,6 +68,17 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="Push_Image" name="Build image (1)" type="DockerCommand">
+        <parameters>
+          <param name="docker.command.type" value="build" />
+          <param name="docker.image.namesAndTags" value="lamata/mercury:0.0.2" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerImage.platform" value="linux" />
+          <param name="dockerfile.path" value="Dockerfile" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="Mercury_HttpsGithubComUmDevCreativeMercuryGitRefsHeadsMain" />
