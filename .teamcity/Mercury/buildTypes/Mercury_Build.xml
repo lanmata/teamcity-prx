@@ -14,7 +14,7 @@
     <parameters>
       <param name="SONAR_TOKEN" value="c2def6536a67b49657d57ecf1699bafeb220c4ae" />
       <param name="env.SONAR_TOKEN" value="c2def6536a67b49657d57ecf1699bafeb220c4ae" spec="text display='normal' readOnly='true' validationMode='any'" />
-      <param name="sonar.exclusions"><![CDATA[**/*.xml,**/*Application.*,**/exceptions/*, **/util/*, **/config/*,**/loggers/*,**/interceptor/*,**/mapper/*, **/*Test.*, **/cache/*,
+      <param name="sonar.exclusions"><![CDATA[**/*.xml,**/*Application.*,**/exceptions/*, **/config/*,**/loggers/*,**/interceptor/*,**/mapper/*, **/*Test.*, **/cache/*,
             **/cache/domain/*,**/repository/*,**/*Entity.*,**/*Document.*,**/kafka/listener/*,**/mercury/security/*,**/processor/*]]></param>
       <param name="sonar.organization" value="umdevc" spec="text display='normal' readOnly='true' validationMode='any'" />
       <param name="sonar.projectKey" value="umdc-mercury" spec="text display='normal' readOnly='true' validationMode='any'" />
