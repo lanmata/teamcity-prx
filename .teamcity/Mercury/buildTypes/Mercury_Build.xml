@@ -10,6 +10,7 @@
     <disabled-settings>
       <setting-ref ref="DockerCommand" />
       <setting-ref ref="Qodana" />
+      <setting-ref ref="Sonarcloud" />
     </disabled-settings>
     <parameters>
       <param name="SONAR_TOKEN" value="c2def6536a67b49657d57ecf1699bafeb220c4ae" />
