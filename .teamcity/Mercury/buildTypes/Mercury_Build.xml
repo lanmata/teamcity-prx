@@ -8,6 +8,7 @@
       <option name="buildNumberPattern" value="0.0.%build.counter%" />
     </options>
     <disabled-settings>
+      <setting-ref ref="Maven2" />
       <setting-ref ref="Qodana" />
       <setting-ref ref="Sonarcloud" />
     </disabled-settings>
