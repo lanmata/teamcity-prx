@@ -6,7 +6,7 @@
       <tool-version tool-type="jetbrains.resharper-clt" id="jetbrains.resharper-clt.2024.3.0" />
       <tool-version tool-type="sonar-qube-scanner" id="sonar-qube-scanner.4.2.0.1873-scanner" />
       <tool-version tool-type="maven" id="maven.3.9.12" />
-      <tool-version tool-type="jacoco" id="jacoco.0.8.7" />
+      <tool-version tool-type="jacoco" id="jacoco.0.8.14" />
       <tool-version tool-type="JetBrains.dotCover.CommandLineTools" id="JetBrains.dotCover.CommandLineTools.bundled" />
       <tool-version tool-type="intellij" id="intellij.ideaIU-2025.2.5" />
     </default-versions>
