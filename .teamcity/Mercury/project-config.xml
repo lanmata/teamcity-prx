@@ -6,7 +6,7 @@
       <parameters>
         <param name="displayName" value="Docker Registry" />
         <param name="providerType" value="Docker" />
-        <param name="repositoryUrl" value="https://hub.docker.com" />
+        <param name="repositoryUrl" value="https://docker.io" />
         <param name="secure:userPass" value="credentialsJSON:f8ce7955-acd6-4e15-8cc8-73b93ff5f0d5" />
         <param name="userName" value="lamata" />
       </parameters>
