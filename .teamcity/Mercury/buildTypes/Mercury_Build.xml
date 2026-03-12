@@ -8,7 +8,6 @@
       <option name="buildNumberPattern" value="0.0.%build.counter%" />
     </options>
     <disabled-settings>
-      <setting-ref ref="Maven2" />
       <setting-ref ref="Maven_Build_1_1" />
       <setting-ref ref="Qodana" />
       <setting-ref ref="Sonarcloud" />
@@ -22,19 +21,6 @@
       <param name="sonar.projectName" value="umdc-mercury" spec="text display='normal' readOnly='true' validationMode='any'" />
     </parameters>
     <build-runners>
-      <runner id="Maven2" name="Maven" type="Maven2">
-        <parameters>
-          <param name="goals" value="clean test" />
-          <param name="localRepoScope" value="agent" />
-          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
-          <param name="pomLocation" value="pom.xml" />
-          <param name="runnerArgs" value="-Dmaven.test.failure.ignore=true" />
-          <param name="target.jdk.home" value="%env.JDK_21_0_x64%" />
-          <param name="teamcity.coverage.jacoco.classpath" value="." />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="userSettingsSelection" value="Repsy Maven" />
-        </parameters>
-      </runner>
       <runner id="Sonarcloud" name="Sonarcloud" type="sonar-plugin">
         <conditions>
           <equals name="teamcity.build.branch" value="develop" />
