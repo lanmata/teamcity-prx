@@ -83,16 +83,6 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="Docker_delete_container" name="Docker delete container" type="DockerCommand">
-        <parameters>
-          <param name="command.args" value="lamata/mercury:0.0.2" />
-          <param name="docker.command.type" value="other" />
-          <param name="docker.push.remove.image" value="true" />
-          <param name="docker.sub.command" value="rm" />
-          <param name="dockerfile.source" value="PATH" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="Mercury_HttpsGithubComUmDevCreativeMercuryGitRefsHeadsMain" />
