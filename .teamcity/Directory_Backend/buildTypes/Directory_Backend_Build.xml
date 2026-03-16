@@ -96,7 +96,7 @@ foreach ($file in $filesToCopy) {
       </runner>
       <runner id="DockerCommand" name="Docker build" type="DockerCommand">
         <parameters>
-          <param name="command.args" value="--build-arg RESOURCE_PATH=%build.certificateDestinationPath%" />
+          <param name="command.args" value="--build-arg RESOURCE_PATH=%build.certificateDestinationPath%/" />
           <param name="docker.command.type" value="build" />
           <param name="docker.image.namesAndTags" value="lamata/directory-backend-api:0.0.2" />
           <param name="docker.push.remove.image" value="true" />
