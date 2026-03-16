@@ -12,6 +12,7 @@
       <setting-ref ref="Qodana" />
     </disabled-settings>
     <parameters>
+      <param name="build.certificateDestinationPath" value="%system.teamcity.build.workingDir%" />
       <param name="maven.project.name" value="directory-backend" />
       <param name="sonar.exclusions" value="**/*.xml,**/*Application.*,**/exceptions/*,**/config/*,**/loggers/*,**/interceptor/*,**/mapper/*,**/*Test.*,**/cache/*,**/cache/domain/*,**/repository/*,**/*Entity.*,**/*Document.*,**/kafka/listener/*,**/mercury/security/*,**/processor/*" />
       <param name="sonar.organization" value="umdevc" />
