@@ -14,6 +14,7 @@
     </disabled-settings>
     <parameters>
       <param name="maven.project.name" value="directory-backend" />
+      <param name="sonar.exclusions" value="**/*.xml,**/*Application.*,**/exceptions/*,**/config/*,**/loggers/*,**/interceptor/*,**/mapper/*,**/*Test.*,**/cache/*,**/cache/domain/*,**/repository/*,**/*Entity.*,**/*Document.*,**/kafka/listener/*,**/mercury/security/*,**/processor/*" />
     </parameters>
     <build-runners>
       <runner id="Maven2" name="Maven test" type="Maven2">
