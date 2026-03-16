@@ -107,7 +107,7 @@ foreach ($file in $filesToCopy) {
       <runner id="Docker_push" name="Docker push" type="DockerCommand">
         <parameters>
           <param name="docker.command.type" value="push" />
-          <param name="docker.image.namesAndTags" value="lamata/directory-backend/api:0.0.2" />
+          <param name="docker.image.namesAndTags" value="lamata/directory-backend-api:0.0.2" />
           <param name="docker.push.remove.image" value="true" />
           <param name="dockerfile.source" value="PATH" />
           <param name="teamcity.step.mode" value="default" />
