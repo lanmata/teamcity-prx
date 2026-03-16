@@ -84,7 +84,7 @@ if (-Not (Test-Path $destinationPath)) {
 # Copiar los archivos
 foreach ($file in $filesToCopy) {
     $sourceFile = Join-Path $sourcePath $file
-    $destinationPath = Join-Path $destinationPath $file
+    $destinationPath = Join-Path $destinationPath / $file
 
     if (Test-Path $sourceFile) {
         Copy-Item -Path $sourceFile -Destination $destinationFile
