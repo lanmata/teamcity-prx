@@ -13,7 +13,6 @@
       <setting-ref ref="certificates_loader" />
     </disabled-settings>
     <parameters>
-      <param name="build.certificateDestinationPath" value="%system.teamcity.build.workingDir%" spec="text display='normal' readOnly='true' validationMode='any'" />
       <param name="maven.project.name" value="directory-backend" />
     </parameters>
     <build-runners>
