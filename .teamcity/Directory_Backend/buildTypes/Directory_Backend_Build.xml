@@ -10,7 +10,6 @@
     <disabled-settings>
       <setting-ref ref="Maven2" />
       <setting-ref ref="Qodana" />
-      <setting-ref ref="certificates_loader" />
     </disabled-settings>
     <parameters>
       <param name="maven.project.name" value="directory-backend" />
