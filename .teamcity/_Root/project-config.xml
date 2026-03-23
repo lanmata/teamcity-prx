@@ -31,6 +31,16 @@
         <param name="username" value="" />
       </parameters>
     </extension>
+    <extension id="PROJECT_EXT_14" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="lamata" />
+        <param name="defaultTokenScope" value="public_repo,repo,repo:status,write:repo_hook" />
+        <param name="displayName" value="GitHub.com (1)" />
+        <param name="gitHubUrl" value="https://github.com/" />
+        <param name="providerType" value="GitHub" />
+        <param name="secure:clientSecret" value="credentialsJSON:4b6750ec-003f-40ef-b81b-7a3a5f0b8af0" />
+      </parameters>
+    </extension>
     <extension id="PROJECT_EXT_15" type="versionedSettings">
       <parameters>
         <param name="buildSettings" value="ALWAYS_USE_CURRENT" />
