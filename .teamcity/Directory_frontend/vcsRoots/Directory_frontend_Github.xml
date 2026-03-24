@@ -8,8 +8,8 @@
   <param name="ignoreKnownHosts" value="true" />
   <param name="secure:password" value="credentialsJSON:e73facba-e581-47ad-aa32-aeda7d1a4f61" />
   <param name="submoduleCheckout" value="CHECKOUT" />
-  <param name="teamcity:branchSpec"><![CDATA[+:main
-+:development]]></param>
+  <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/main
++:refs/heads/development]]></param>
   <param name="url" value="https://github.com/um-dev-creative/directory-frontend.git" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="lanmata" />
