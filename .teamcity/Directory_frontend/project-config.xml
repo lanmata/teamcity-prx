@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="cd4322ad-c6bc-48cc-8a28-6b2782f6e7fc" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2025.3/project-config.xsd">
   <name>Directory Frontend</name>
+  <project-extensions>
+    <extension id="PROJECT_EXT_17" type="OAuthProvider">
+      <parameters>
+        <param name="displayName" value="Docker Registry" />
+        <param name="providerType" value="Docker" />
+        <param name="repositoryUrl" value="https://docker.io" />
+        <param name="secure:userPass" value="credentialsJSON:f8ce7955-acd6-4e15-8cc8-73b93ff5f0d5" />
+        <param name="userName" value="lamata" />
+      </parameters>
+    </extension>
+  </project-extensions>
 </project>
 
