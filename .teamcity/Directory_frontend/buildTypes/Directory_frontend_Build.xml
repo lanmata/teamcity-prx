@@ -23,6 +23,12 @@
     </vcs-settings>
     <build-extensions>
       <extension id="perfmon" type="perfmon" />
+      <extension id="DockerSupport" type="DockerSupport">
+        <parameters>
+          <param name="login2registry" value="PROJECT_EXT_17" />
+          <param name="loginCheckbox" value="on" />
+        </parameters>
+      </extension>
     </build-extensions>
   </settings>
 </build-type>
