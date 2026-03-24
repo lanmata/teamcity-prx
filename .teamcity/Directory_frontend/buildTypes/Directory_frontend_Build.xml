@@ -6,6 +6,16 @@
     <options>
       <option name="buildConfigurationType" value="DEPLOYMENT" />
     </options>
+    <build-runners>
+      <runner id="nodejs_runner" name="" type="nodejs-runner">
+        <parameters>
+          <param name="plugin.docker.imageId" value="node:lts" />
+          <param name="plugin.docker.imagePlatform" value="linux" />
+          <param name="shellScript" value="npm install" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="Directory_frontend_Github" />
     </vcs-settings>
