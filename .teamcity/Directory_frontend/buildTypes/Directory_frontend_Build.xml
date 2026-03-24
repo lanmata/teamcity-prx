@@ -5,6 +5,7 @@
   <settings>
     <options>
       <option name="buildConfigurationType" value="DEPLOYMENT" />
+      <option name="buildNumberPattern" value="0.0.%build.counter%" />
     </options>
     <build-runners>
       <runner id="nodejs_runner" name="" type="nodejs-runner">
