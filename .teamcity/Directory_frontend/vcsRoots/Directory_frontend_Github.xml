@@ -13,6 +13,6 @@
   <param name="url" value="https://github.com/um-dev-creative/directory-frontend.git" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="lanmata" />
-  <param name="usernameStyle" value="USERID" />
+  <param name="usernameStyle" value="FULL" />
 </vcs-root>
 
