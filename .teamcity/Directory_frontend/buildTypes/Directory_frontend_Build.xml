@@ -22,7 +22,7 @@
           <param name="docker.command.type" value="build" />
           <param name="docker.image.namesAndTags" value="lamata/directory-frontend:0.0.3" />
           <param name="docker.push.remove.image" value="true" />
-          <param name="dockerImage.platform" value="linux" />
+          <param name="dockerImage.platform" value="windows" />
           <param name="dockerfile.path" value="Dockerfile" />
           <param name="dockerfile.source" value="PATH" />
           <param name="teamcity.step.mode" value="default" />
