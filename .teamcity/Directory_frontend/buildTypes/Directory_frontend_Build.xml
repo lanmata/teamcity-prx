@@ -7,9 +7,6 @@
       <option name="buildNumberPattern" value="0.0.%build.counter%" />
       <option name="maximumNumberOfBuildsPerBranch" value="refs/heads/main:0&#xD;&#xA;refs/heads/development:0" />
     </options>
-    <disabled-settings>
-      <setting-ref ref="Docker_push_image" />
-    </disabled-settings>
     <build-runners>
       <runner id="nodejs_runner" name="" type="nodejs-runner">
         <parameters>
