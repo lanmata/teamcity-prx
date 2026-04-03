@@ -18,13 +18,14 @@
       <runner id="Maven2" name="" type="Maven2">
         <parameters>
           <param name="goals" value="clean test" />
-          <param name="localRepoScope" value="mavenDefault" />
+          <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
           <param name="pomLocation" value="pom.xml" />
           <param name="runnerArgs" value="-Dmaven.test.failure.ignore=true" />
           <param name="target.jdk.home" value="%env.JDK_21_0_x64%" />
           <param name="teamcity.coverage.jacoco.classpath" value="." />
           <param name="teamcity.coverage.jacoco.patterns" value="+:**" />
+          <param name="teamcity.coverage.runner" value="JACOCO" />
           <param name="teamcity.step.mode" value="default" />
           <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
           <param name="userSettingsSelection" value="Repsy Maven" />
