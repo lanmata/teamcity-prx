@@ -10,7 +10,7 @@
       <param name="build.certificateDestinationPath" value="%system.teamcity.build.workingDir%\" spec="text display='normal' readOnly='true' validationMode='any'" />
       <param name="build.docker.projectName" value="lamata/backbone-rest" spec="text display='normal' readOnly='true' validationMode='any'" />
       <param name="sonar.exclusions" value="**/*.xml,**/PrxBackofficeRestApplication.*,**/config/*,**/config/jwt/*,**/config/jackson/*,**/config/security/*,**/loggers/*,**/loggers/interceptor/*,**/exceptions/*,**/mapper/*,**/mapper/decorator/*,**/converter/*,**/*Test*,**/session/*,**/*.java" spec="text display='normal' readOnly='true' validationMode='any'" />
-      <param name="sonar.organization" value="umdevc" />
+      <param name="sonar.organization" value="lamm" />
       <param name="sonar.projectKey" value="lanmata_backbone-rest" spec="text display='normal' readOnly='true' validationMode='any'" />
       <param name="sonar.projectName" value="prx" spec="text display='normal' readOnly='true' validationMode='any'" />
     </parameters>
