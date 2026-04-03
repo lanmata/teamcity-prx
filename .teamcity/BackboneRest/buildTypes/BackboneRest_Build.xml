@@ -6,6 +6,9 @@
     <options>
       <option name="cleanBuild" value="true" />
     </options>
+    <disabled-settings>
+      <setting-ref ref="Maven2" />
+    </disabled-settings>
     <parameters>
       <param name="build.certificateDestinationPath" value="%system.teamcity.build.workingDir%\" spec="text display='normal' readOnly='true' validationMode='any'" />
       <param name="build.docker.projectName" value="lamata/backbone-rest" spec="text display='normal' readOnly='true' validationMode='any'" />
