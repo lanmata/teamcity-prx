@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="e6264ef0-f923-48ca-b7e4-cef66bdb3606" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="e6264ef0-f923-48ca-b7e4-cef66bdb3606" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2025.3/project-config.xsd">
   <name>Build</name>
   <description />
   <settings>
@@ -10,6 +10,7 @@
       <param name="build.certificateDestinationPath" value="%system.teamcity.build.workingDir%\" spec="text display='normal' readOnly='true' validationMode='any'" />
       <param name="build.docker.projectName" value="lamata/backbone-rest" spec="text display='normal' readOnly='true' validationMode='any'" />
       <param name="sonar.exclusions" value="**/*.xml,**/PrxBackofficeRestApplication.*,**/config/*,**/config/jwt/*,**/config/jackson/*,**/config/security/*,**/loggers/*,**/loggers/interceptor/*,**/exceptions/*,**/mapper/*,**/mapper/decorator/*,**/converter/*,**/*Test*,**/session/*,**/*.java" spec="text display='normal' readOnly='true' validationMode='any'" />
+      <param name="sonar.organization" value="umdevc" />
       <param name="sonar.projectKey" value="lanmata_backbone-rest" spec="text display='normal' readOnly='true' validationMode='any'" />
       <param name="sonar.projectName" value="prx" spec="text display='normal' readOnly='true' validationMode='any'" />
     </parameters>
@@ -140,7 +141,6 @@ foreach ($file in $filesToCopy) {
     <vcs-settings>
       <vcs-entry-ref root-id="BackboneRest_Teamcity" />
     </vcs-settings>
-    <requirements />
     <build-triggers>
       <build-trigger id="vcsTrigger" type="vcsTrigger">
         <parameters>
@@ -169,7 +169,6 @@ foreach ($file in $filesToCopy) {
         </parameters>
       </extension>
     </build-extensions>
-    <cleanup />
   </settings>
 </build-type>
 
