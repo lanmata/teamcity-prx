@@ -15,9 +15,10 @@
       <param name="sonar.projectName" value="lamm" spec="text display='normal' readOnly='true' validationMode='any'" />
     </parameters>
     <build-runners>
-      <runner id="Maven2" name="" type="Maven2">
+      <runner id="Maven2" name="Maven Build" type="Maven2">
         <parameters>
-          <param name="goals" value="clean test" />
+          <param name="goals" value="clean package" />
+          <param name="jvmArgs" value="--enable-native-access=ALL-UNNAMED" />
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
           <param name="pomLocation" value="pom.xml" />
